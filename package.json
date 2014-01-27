@@ -1,7 +1,7 @@
 {
   "name": "hubot-stews",
   "description": "Gets today's stews from Hos Frank",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Tommy Brunn <tommy.brunn@gmail.com>",
   "license": "MIT",
 
