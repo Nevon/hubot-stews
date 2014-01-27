@@ -1,8 +1,18 @@
 # Description:
 #   Get today's stews from Hos Frank.
 #
+# Configuration:
+#   None
+#
+# Dependencies:
+#   "cheerio": "1.13.x"
+#   "iconv-lite": "*"
+#
 # Commands:
-#   hubot youtube me <query> - Searches YouTube for the query and returns the video embed link.
+#   hubot hos frank|franks|gryta|grytor - Fetches today's stews from Hos Frank for you
+#
+# Author:
+#   Nevon
 cheerio = require "cheerio"
 iconvlite = require "iconv-lite"
 
