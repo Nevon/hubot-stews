@@ -7,7 +7,7 @@ cheerio = require "cheerio"
 iconvlite = require "iconv-lite"
 
 module.exports = (robot) ->
-  robot.respond /(hos frank|franks)/i, (msg) ->
+  robot.respond /frank(?:s?)|gryt(?:a|or)(?:.?)/i, (msg) ->
     robot.http("http://www.aptit.se/0909/index/products/productsved.asp?x=1&SupplierID=105")
       .encoding("binary")
       .get() (err, res, body) ->
