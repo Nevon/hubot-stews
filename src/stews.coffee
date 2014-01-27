@@ -9,10 +9,12 @@ iconvlite = require "iconv-lite"
 module.exports = (robot) ->
   robot.respond /(hos frank|franks)/i, (msg) ->
     robot.http("http://www.aptit.se/0909/index/products/productsved.asp?x=1&SupplierID=105")
+      .encoding("binary")
       .get() (err, res, body) ->
         if res.statusCode is 200
+          body = iconvlite.decode(body, "iso88591")
           $ = cheerio.load(body)
-          stews = (iconvlite.decode($(stew).text(), 'utf-8') for stew in $("#category_895 .txtb").toArray())
+          stews = ($(stew).text() for stew in $("#category_895 .txtb").toArray())
 
           response = ""
 
