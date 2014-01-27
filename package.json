@@ -1,0 +1,40 @@
+{
+  "name": "hubot-stews",
+  "description": "Gets today's stews from Hos Frank",
+  "version": "0.0.1",
+  "author": "Tommy Brunn <tommy.brunn@gmail.com>",
+  "license": "MIT",
+
+  "keywords": [
+    "hubot",
+    "hubot-scripts"
+  ],
+
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Nevon/hubot-stews.git"
+  },
+
+  "bugs": {
+    "url": "https://github.com/Nevon/hubot-stews/issues"
+  },
+
+  "dependencies": {
+    "coffee-script": "~1.6"
+  },
+
+  "devDependencies": {
+    "mocha": "*",
+    "chai": "*",
+    "sinon-chai": "*",
+    "sinon": "*",
+    "cheerio": "0.13.x",
+    "iconv-lite": "*"
+  },
+
+  "main": "index.coffee",
+
+  "scripts": {
+    "test": "script/test"
+  }
+}
