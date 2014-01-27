@@ -15,10 +15,11 @@
 #   Nevon
 cheerio = require "cheerio"
 iconvlite = require "iconv-lite"
+url = "http://www.aptit.se/0909/index/products/productsved.asp?x=1&SupplierID=105"
 
 module.exports = (robot) ->
-  robot.respond /(?:hos\s)?frank(?:s?)|^gryt(?:a|or)(?:.?)+/i, (msg) ->
-    robot.http("http://www.aptit.se/0909/index/products/productsved.asp?x=1&SupplierID=105")
+  robot.respond /(?:hos\s)?frank(?:s?)|gryt(?:a|or)(?:.?)+/i, (msg) ->
+    robot.http(url)
       .encoding("binary")
       .get() (err, res, body) ->
         if res.statusCode is 200
@@ -32,6 +33,8 @@ module.exports = (robot) ->
             response += "Sorry, but I couldn't find any stews today."
           else
             response = "Dagens grytor:\n"
-            response += "  "+stew+"\n" for stew in stews 
+            response += "  "+stew+"\n" for stew in stews
+        else
+          robot.logger.error "Unable to get stews from #{url}. #{err}"
 
         msg.reply response
