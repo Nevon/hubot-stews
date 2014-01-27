@@ -20,16 +20,16 @@
   },
 
   "dependencies": {
-    "coffee-script": "~1.6"
+    "coffee-script": "~1.6",
+    "cheerio": "0.13.x",
+    "iconv-lite": "*"
   },
 
   "devDependencies": {
     "mocha": "*",
     "chai": "*",
     "sinon-chai": "*",
-    "sinon": "*",
-    "cheerio": "0.13.x",
-    "iconv-lite": "*"
+    "sinon": "*"
   },
 
   "main": "index.coffee",
